@@ -1,3 +1,4 @@
 export class Cliente{
     nome;
-    cpf;
+    cpf
+}
