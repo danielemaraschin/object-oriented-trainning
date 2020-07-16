@@ -1,30 +1,31 @@
 import {Cliente} from "./Cliente.js";
 
 export class ContaCorrente{
+    static numeroDeContas = 0;
+    numeroDeContas = 0;
     agencia;
-    
-    
-    
+        
+    _saldo = 0;
     _cliente;
 
     set cliente (novoValor){
-        if (novoValor instanceof Cliente){
+        if (novoValor instanceof Cliente ){
             this._cliente = novoValor;
-        }
-        
+        }   
     }
 
-        get cliente (){
-            return.this_cliente;
-        }
-//coloca _  na frente da palavra para especificar que é uma classe privada;
-//o dev nem deveria ter acesso e nao eh pra ele mexer nessa var.
-//estao tentando com a tralha na frente ser privado, mas ainda nao está oficial.
-
-    _saldo = 0;
+    get cliente (){
+        return this._cliente;
+    }
 
     get saldo (){
         return this._saldo; 
+    }
+
+    constructor(cliente, agencia){
+        this.cliente = cliente;
+        this.agencia = agencia;
+        ContaCorrente.numeroDeContas +=1; 
     }
 
     sacar(valor){
