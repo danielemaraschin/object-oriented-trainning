@@ -26,16 +26,13 @@ export class Conta {
     }
 
     sacar(valor) {
-        let taxa = 1;
-        this._sacar(valor, taxa);
+      
     }
 
-    _sacar(valor, taxa){
-        const valorSacado = taxa * valor;
-        if (this._saldo >= valorSacado) {
-            this._saldo -= valorSacado;
-            return valorSacado;
-        }
+    // método abstrato
+    _sacar(valor, taxa){ 
+        throw new Error ("o método Sacar da conta é abstrato")
+    }
 //se ñ entrar no if,retornará 0(ñ pode sacar)
         return 0;
     }
