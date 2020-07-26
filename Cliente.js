@@ -1,5 +1,5 @@
 export class Cliente {
-  get cpf() {
+  get cpf(){
     return this._cpf;
   }
 
@@ -9,4 +9,7 @@ export class Cliente {
     this._senha = senha;
   }
 
+  autenticar(){
+    return true;
+  }
 }
